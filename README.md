@@ -2,9 +2,21 @@
 
 The project is a JavaScript-based website-oriented 16-bit-style pixel art game.
 
-## Running the Game
+## Game Overview
+
+The game focuses around multiple players betting on cards. However, for this
+implementation only one player will be allowed to place a bet on a card. At the
+start of the round players can choose a specific card suit that they believe
+will win the race. At this point, the race starts.
+
+On the right-hand side of the cards is a stack of five face-down cards. Four
+aces are laid down
 
 ## Assets Used
+
+The SVG playing cards were originally developed by David Bellot and recreated by
+Huub de Beer.
+[You can check out their original projects here.](https://github.com/htdebeer/SVG-cards)
 
 # License TL;DR
 
