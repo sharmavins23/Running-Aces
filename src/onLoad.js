@@ -16,6 +16,9 @@ function refreshGameState() {
 
     // Place the card backs on the table to align them
     placeCardBacks();
+
+    // Clear the radio buttons
+    clearRadioButtons();
 }
 
 // Clear the entire table, excluding buttons
@@ -31,6 +34,18 @@ function clearTable() {
                 cell.removeChild(cell.firstChild);
             }
         }
+    }
+}
+
+// Clear all radio button selections
+function clearRadioButtons() {
+    // Get all radio buttons
+    let radioButtons = document.getElementsByName("bets");
+
+    // Iterate through the radio buttons
+    for (let i = 0; i < radioButtons.length; i++) {
+        // Uncheck the radio button
+        radioButtons[i].checked = false;
     }
 }
 
