@@ -9,10 +9,18 @@ var GAMESTARTED = false; // Whether the game has started
 // Start the game, if applicable
 function startGame() {
     // Check if the game is already started
-    if (GAMESTARTED) return;
+    if (GAMESTARTED) {
+        // Display an error message
+        displayErrorMessage("Flip a card.");
+        return;
+    }
 
     // Do nothing if no bets were chosen
     if (!checkBetSelected()) return;
+
+    // Set the game as started
+    GAMESTARTED = true;
+    displayInfoMessage("Game started.");
 }
 
 // ===== Checker functions =====================================================
@@ -29,7 +37,7 @@ function checkBetSelected() {
         }
     }
 
-    // At this point, no bets were selected
-    alert("Please select a bet.");
-    return;
+    // At this point, no bets were selected, so display an error message
+    displayErrorMessage("No bet chosen!");
+    return false;
 }
