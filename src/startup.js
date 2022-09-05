@@ -25,6 +25,7 @@ function startGame() {
     // Disable start button, enable flip button
     document.getElementById("startButton").disabled = true;
     document.getElementById("flipButton").disabled = false;
+    document.getElementById("autoplayButton").disabled = false;
 
     // Lock radio buttons
     lockRadioButtons();

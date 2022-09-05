@@ -41,6 +41,7 @@ function refreshGameState() {
     // Disable flip and start buttons
     document.getElementById("flipButton").disabled = true;
     document.getElementById("startButton").disabled = true;
+    document.getElementById("autoplayButton").disabled = true;
 
     // Set the game started to false
     GAMESTARTED = false;

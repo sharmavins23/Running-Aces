@@ -100,6 +100,19 @@ function flipCard() {
     for (let i = 0; i < 4; i++) {
         if (ACEPOSITIONS[i] == 0) {
             endGame(suits[i]);
+            return "Game over";
         }
+    }
+}
+
+// Play the game automagically for a player
+function autoplay() {
+    // Disable manual flip buttons
+    document.getElementById("flipButton").disabled = true;
+
+    let returnVal = flipCard();
+
+    while (returnVal != "Game over") {
+        returnVal = flipCard();
     }
 }
