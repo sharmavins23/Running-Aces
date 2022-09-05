@@ -24,6 +24,8 @@ function startGame() {
 
     // Lock radio buttons
     lockRadioButtons();
+
+    // Reshuffle all cards
 }
 
 // ===== Helper functions ======================================================

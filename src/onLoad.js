@@ -26,6 +26,9 @@ function refreshGameState() {
     // Place the card backs on the table to align them
     placeCardBacks();
 
+    // Initialize card systems
+    initializeCardSystems();
+
     // Clear the radio buttons
     clearRadioButtons();
 
