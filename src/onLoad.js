@@ -26,6 +26,9 @@ function refreshGameState() {
     // Reload aces to the base state
     placeAces();
 
+    // Initialize the aces tracking system
+    initializeAceTrackers();
+
     // Place the card backs on the table to align them
     placeCardBacks();
 
@@ -73,37 +76,4 @@ function clearRadioButtons() {
         radioButtons[i].checked = false;
         radioButtons[i].disabled = false;
     }
-}
-
-// ===== Card placement code ===================================================
-
-// Place aces into the base game state
-function placeAces() {
-    // Save suits as an array
-    let suits = ["club", "diamond", "heart", "spade"];
-
-    // Iterate through the suits
-    for (let i = 0; i < suits.length; i++) {
-        // Get the cell's document ID
-        let cell = document.getElementById("tabler6c" + i);
-
-        // Place the ace
-        cell.innerHTML = createCard(`${suits[i]}_1`);
-    }
-}
-
-// Place card backs on the table to align cells
-function placeCardBacks() {
-    // Iterate through the table
-    for (let i = 1; i <= 6; i++) {
-        // Get the cell's document ID
-        let cell = document.getElementById("tabler" + i + "c4");
-
-        // Place the card back
-        cell.innerHTML = createCard("back", "MidnightBlue");
-    }
-
-    // Place the first card as a blank one
-    let cell = document.getElementById("tabler0c4");
-    cell.innerHTML = createCard("blank");
 }

@@ -4,8 +4,7 @@
 
 // Positions of all aces
 var ACEPOSITIONS = [6, 6, 6, 6];
-// Flipped side cards
-var SIDECARDS = [0, 0, 0, 0, 0];
+// Flipped side cards tracker
 var SIDECARDINDEX = 5;
 
 // ===== Main code =============================================================
@@ -15,11 +14,8 @@ function initializeAceTrackers() {
     // Update the trackers back to the start position
     ACEPOSITIONS = [6, 6, 6, 6];
 
-    // Reset the side cards
-    SIDECARDS = [0, 0, 0, 0, 0];
-
     // Reset the side card index
-    SIDECARDINDEX = 0;
+    SIDECARDINDEX = 5;
 }
 
 // End the game
@@ -70,19 +66,33 @@ function flipCard() {
     // Check the flipped side cards
     // Get the maximal position of all aces
     let maxAcePosition = Math.max(...ACEPOSITIONS);
-    if (maxAcePosition == SIDECARDINDEX) {
-        // Flip the next side card, and decrement the index
-        SIDECARDS[SIDECARDINDEX] = 1;
+    if (maxAcePosition == SIDECARDINDEX && SIDECARDINDEX > 0) {
+        // Save the side card
+        let sideCard = TABLESIDECARDS.pop();
+        let suit = sideCard.substring(0, sideCard.indexOf("_"));
+
+        // Update the side card
+        placeCard(
+            sideCard,
+            SIDECARDINDEX,
+            4
+        );
         SIDECARDINDEX--;
 
-        if (SIDECARDINDEX > 0) {
-            // Update the side card
-            placeCard(
-                TABLESIDECARDS[SIDECARDINDEX + 1],
-                SIDECARDINDEX + 1,
-                4
-            );
+        // Move the corresponding card
+        if (suit == "joker") {
+            if (card == "joker_black") {
+                moveAce("club", -1);
+                moveAce("spade", -1);
+            } else {
+                moveAce("diamond", -1);
+                moveAce("heart", -1);
+            }
+        } else {
+            moveAce(suit, -1);
         }
+
+
     }
 
     let suits = ["club", "diamond", "heart", "spade"];
