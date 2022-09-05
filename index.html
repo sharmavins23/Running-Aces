@@ -17,13 +17,23 @@
 
 <body onload="initializeSystems()">
     <div id="container">
+
         <h1>Running Aces</h1>
+        <p>This is a simple betting game. Choose a bet and start the game in order to play.</p>
+        <p>Pressing "Flip" will flip a card in the bottom right. The corresponding ace will move upwards 1 slot.</p>
+        <p>When all aces hit a specific line, a card on the left will flip. This card will decrease a corresponding ace
+            by 1 slot.</p>
+        <p>If a joker is pulled, the corresponding color aces (black for spades and clubs, red for hearts and diamonds)
+            will move.</p>
+        <p>If your chosen ace reaches the top, you win!</p>
+
         <div id="buttons">
             <input type="button" value="Start" id="startButton" onclick="startGame()" />
             <input type="button" value="Reset Game" id="resetGame" onclick="refreshGameState()" />
             <input type="button" value="Flip!" id="flipButton" onclick="flipCard()" />
             <input type="button" value="Play for me!" id="autoplayButton" onclick="autoplay()" />
         </div>
+
         <div id="game">
             <div id="board">
                 <table id="table">
