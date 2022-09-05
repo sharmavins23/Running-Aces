@@ -6,6 +6,15 @@ var CARDSCALING = 0.6; // Percent sizing for all cards
 
 // ===== Main code and table functionality =====================================
 
+// Initialize all systems
+function initializeSystems() {
+    // Initialize the flavortext system
+    initializeFlavorTextSystems();
+
+    // Finally, refresh the game state
+    refreshGameState();
+}
+
 // Refresh the entire game state
 function refreshGameState() {
     // Start by clearing the table
@@ -19,6 +28,9 @@ function refreshGameState() {
 
     // Clear the radio buttons
     clearRadioButtons();
+
+    // Update flavortext to base
+    displayBaseMessage();
 }
 
 // Clear the entire table, excluding buttons

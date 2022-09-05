@@ -10,9 +10,10 @@
     <!-- Code -->
     <script src="src/onLoad.js"></script>
     <script src="src/startup.js"></script>
+    <script src="src/flavorText.js"></script>
 </head>
 
-<body onload="refreshGameState()">
+<body onload="initializeSystems()">
     <div id="container">
         <h1>Running Aces</h1>
         <div id="buttons">
@@ -90,7 +91,7 @@
                             <label for="spades_bet">Spades</label>
                         </td>
                         <td id="tabler7c4">
-                            <b id="flavorText">Pick a bet!</b>
+                            <div id="flavorText"></div>
                         </td>
                     </tr>
                 </table>
