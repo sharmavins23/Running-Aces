@@ -7,19 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Running Aces</title>
     <link rel="stylesheet" href="styles.css" />
+    <!-- Code -->
+    <script src="src/onLoad.js"></script>
 </head>
 
-<body onload="">
+<body onload="refreshGameState()">
     <div id="container">
         <h1>Running Aces</h1>
         <div id="buttons">
             <input type="button" value="Start" id="start" onclick="" />
-            <input type="button" value="Reset Game" onclick="" />
+            <input type="button" value="Reset Game" onclick="refreshGameState()" />
             <input type="button" value="Flip!" onclick="" />
         </div>
         <div id="game">
             <div id="board">
-                <table>
+                <table id="table">
                     <tr id="tabler0">
                         <td id="tabler0c0"></td>
                         <td id="tabler0c1"></td>
@@ -32,121 +34,63 @@
                         <td id="tabler1c1"></td>
                         <td id="tabler1c2"></td>
                         <td id="tabler1c3"></td>
-                        <td id="tabler1c4">
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#back" fill="navy" transform="scale(0.75)" />
-                            </svg>
-                        </td>
-                    </tr>
-                </table>
-
-                <table>
-                    <tr id="tabler0">
-                        <td id="tabler0c1"></td>
-                        <td id="tabler0c2"></td>
-                        <td id="tabler0c3"></td>
-                        <td id="tabler0c4"></td>
-                        <td id="tabler0c5"></td>
-                    </tr>
-                    <tr id="tabler1">
-                        <td id="tabler1c1"></td>
-                        <td id="tabler1c2"></td>
-                        <td id="tabler1c3"></td>
                         <td id="tabler1c4"></td>
-                        <td id="tabler1c5">
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#back" fill="navy" />
-                            </svg>
-                        </td>
                     </tr>
                     <tr id="tabler2">
+                        <td id="tabler2c0"></td>
                         <td id="tabler2c1"></td>
                         <td id="tabler2c2"></td>
                         <td id="tabler2c3"></td>
                         <td id="tabler2c4"></td>
-                        <td id="tabler2c5">
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#back" fill="navy" />
-                            </svg>
-                        </td>
                     </tr>
                     <tr id="tabler3">
+                        <td id="tabler3c0"></td>
                         <td id="tabler3c1"></td>
                         <td id="tabler3c2"></td>
                         <td id="tabler3c3"></td>
                         <td id="tabler3c4"></td>
-                        <td id="tabler3c5">
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#back" fill="navy" />
-                            </svg>
-                        </td>
                     </tr>
                     <tr id="tabler4">
+                        <td id="tabler4c0"></td>
                         <td id="tabler4c1"></td>
                         <td id="tabler4c2"></td>
                         <td id="tabler4c3"></td>
                         <td id="tabler4c4"></td>
-                        <td id="tabler4c5">
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#back" fill="navy" />
-                            </svg>
-                        </td>
                     </tr>
                     <tr id="tabler5">
-                        <td id="tabler5c1">
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#club_1" fill="black" />
-                            </svg>
-                        </td>
-                        <td id="tabler5c2">
-
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#diamond_1" fill="black" />
-                            </svg>
-                        </td>
-                        <td id="tabler5c3">
-
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#heart_1" fill="black" />
-                            </svg>
-                        </td>
-                        <td id="tabler5c4">
-
-                            <svg width="170" height="245" xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink">
-                                <use href="assets/svg-cards.svg#spade_1" fill="black" />
-                            </svg>
-                        </td>
-                        <td id="tabler5c5"></td>
+                        <td id="tabler5c0"></td>
+                        <td id="tabler5c1"></td>
+                        <td id="tabler5c2"></td>
+                        <td id="tabler5c3"></td>
+                        <td id="tabler5c4"></td>
                     </tr>
                     <tr id="tabler6">
-                        <td id="tabler6c1">
+                        <td id="tabler6c0"></td>
+                        <td id="tabler6c1"></td>
+                        <td id="tabler6c2"></td>
+                        <td id="tabler6c3"></td>
+                        <td id="tabler6c4"></td>
+                    </tr>
+                    <tr id="tabler7">
+                        <td id="tabler7c0">
                             <input type="radio" id="clubs_bet" name="bets" value="clubs" />
                             <label for="clubs_bet">Clubs</label>
-
                         </td>
-                        <td id="tabler6c2">
+                        <td id="tabler7c1">
                             <input type="radio" id="diamonds_bet" name="bets" value="diamonds" />
                             <label for="diamonds_bet">Diamonds</label>
-
                         </td>
-                        <td id="tabler6c3">
+                        <td id="tabler7c2">
                             <input type="radio" id="hearts_bet" name="bets" value="hearts" />
                             <label for="hearts_bet">Hearts</label>
                         </td>
-                        <td id="tabler6c4">
+                        <td id="tabler7c3">
                             <input type="radio" id="spades_bet" name="bets" value="spades" />
                             <label for="spades_bet">Spades</label>
                         </td>
-                        <td id="tabler6c5"></td>
+                        <td id="tabler7c4">
+                            <b id="flavorText">Pick a bet!</b>
+                        </td>
                     </tr>
                 </table>
             </div>
