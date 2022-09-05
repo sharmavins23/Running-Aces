@@ -2,7 +2,7 @@
 
 // ===== Constant values =======================================================
 
-var CARDSCALING = 0.6; // Percent sizing for all cards
+var CARDSCALING = 0.60; // Percent sizing for all cards
 
 // ===== Main code and table functionality =====================================
 
@@ -10,6 +10,9 @@ var CARDSCALING = 0.6; // Percent sizing for all cards
 function initializeSystems() {
     // Initialize the flavortext system
     initializeFlavorTextSystems();
+
+    // Initialize the aces tracking system
+    initializeAceTrackers();
 
     // Finally, refresh the game state
     refreshGameState();
@@ -31,6 +34,10 @@ function refreshGameState() {
 
     // Clear the radio buttons
     clearRadioButtons();
+
+    // Disable flip and start buttons
+    document.getElementById("flipButton").disabled = true;
+    document.getElementById("startButton").disabled = true;
 
     // Set the game started to false
     GAMESTARTED = false;
@@ -66,34 +73,6 @@ function clearRadioButtons() {
         radioButtons[i].checked = false;
         radioButtons[i].disabled = false;
     }
-}
-
-// ===== Helper functions ======================================================
-
-// Given some basic information, create a card
-function createCard(cardValue, fill = "") {
-    // Create the card
-    let card = `
-        <svg
-            width="${170 * CARDSCALING}"
-            height="${245 * CARDSCALING}"
-        >
-            <use
-                href="assets/svg-cards.svg#${cardValue}"`;
-
-    // Add the fill if it exists
-    if (fill != "") {
-        card += `fill="${fill}"`;
-    } else {
-        card += `fill="${fill}"`;
-    }
-
-    // Finish the card
-    card += ` transform="scale(${CARDSCALING})"
-            />
-        </svg>`;
-
-    return card;
 }
 
 // ===== Card placement code ===================================================

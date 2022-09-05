@@ -22,6 +22,10 @@ function startGame() {
     GAMESTARTED = true;
     displayInfoMessage("Game started.");
 
+    // Disable start button, enable flip button
+    document.getElementById("startButton").disabled = true;
+    document.getElementById("flipButton").disabled = false;
+
     // Lock radio buttons
     lockRadioButtons();
 
@@ -56,4 +60,10 @@ function lockRadioButtons() {
     for (let i = 0; i < radioButtons.length; i++) {
         radioButtons[i].disabled = true;
     }
+}
+
+// Handle radio button clicks
+function onRadioButtonClick() {
+    // Enable the start game button
+    document.getElementById("startButton").disabled = false;
 }
