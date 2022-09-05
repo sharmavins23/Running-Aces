@@ -50,12 +50,13 @@ function flipCard() {
 
     // Pull the most recent card from the deck
     let card = DECK.pop();
+    placeCard(card, 6, 4); // Place it on the table
     // Cut the string up to the underline to get the suit
     let suit = card.substring(0, card.indexOf("_"));
 
     // Move the corresponding card
     if (suit == "joker") {
-        if (card.equals("joker_black")) {
+        if (card == "joker_black") {
             moveAce("club", 1);
             moveAce("spade", 1);
         } else {
