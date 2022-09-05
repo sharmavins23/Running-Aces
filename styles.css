@@ -1,0 +1,12 @@
+/* Overall styling for the game Running Aces */
+
+div {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+table, th, tr, td {
+    border: 1px solid black;
+    margin: auto;
+}

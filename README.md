@@ -1,6 +1,6 @@
 # Running Aces
 
-The project is a JavaScript-based website-oriented 16-bit-style pixel art game.
+The project is a JavaScript-based website-oriented game.
 
 ## Game Overview
 
@@ -10,7 +10,18 @@ start of the round players can choose a specific card suit that they believe
 will win the race. At this point, the race starts.
 
 On the right-hand side of the cards is a stack of five face-down cards. Four
-aces are laid down
+aces are laid down, and cards are flipped. As a card of a certain suit is
+flipped, that corresponding ace will move upwards.
+
+Five random cards are laid down in a random order on the right. When all four
+cards have passed a card on the right, it will flip, and the corresponding card
+will go back one space.
+
+The winner of the race is the card that advances to the topmost space (six moves
+total).
+
+Finally, jokers are added into this grouping. Jokers are either red or black,
+and will move both red cards or both black cards up or down.
 
 ## Assets Used
 
