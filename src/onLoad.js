@@ -29,6 +29,9 @@ function refreshGameState() {
     // Clear the radio buttons
     clearRadioButtons();
 
+    // Set the game started to false
+    GAMESTARTED = false;
+
     // Update flavortext to base
     displayBaseMessage();
 }
@@ -49,7 +52,7 @@ function clearTable() {
     }
 }
 
-// Clear all radio button selections
+// Clear all radio button selections (AND unlock them)
 function clearRadioButtons() {
     // Get all radio buttons
     let radioButtons = document.getElementsByName("bets");
@@ -58,6 +61,7 @@ function clearRadioButtons() {
     for (let i = 0; i < radioButtons.length; i++) {
         // Uncheck the radio button
         radioButtons[i].checked = false;
+        radioButtons[i].disabled = false;
     }
 }
 

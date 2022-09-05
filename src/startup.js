@@ -21,9 +21,12 @@ function startGame() {
     // Set the game as started
     GAMESTARTED = true;
     displayInfoMessage("Game started.");
+
+    // Lock radio buttons
+    lockRadioButtons();
 }
 
-// ===== Checker functions =====================================================
+// ===== Helper functions ======================================================
 
 // Check radio buttons to see if a bet is selected
 function checkBetSelected() {
@@ -40,4 +43,15 @@ function checkBetSelected() {
     // At this point, no bets were selected, so display an error message
     displayErrorMessage("No bet chosen!");
     return false;
+}
+
+// Lock all radio buttons
+function lockRadioButtons() {
+    // Get all radio button elements
+    let radioButtons = document.getElementsByName("bets");
+
+    // Iterate through and lock each
+    for (let i = 0; i < radioButtons.length; i++) {
+        radioButtons[i].disabled = true;
+    }
 }
